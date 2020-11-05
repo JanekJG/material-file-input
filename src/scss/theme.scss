@@ -1,0 +1,42 @@
+/* Create Material Theme */
+@import '~@angular/material/theming';
+
+@include mat-core();
+
+$primary: mat-palette($mat-blue, 800, 700, 900);
+$accent: mat-palette($mat-blue-grey);
+$theme: mat-light-theme($primary, $accent);
+
+@include angular-material-theme($theme);
+
+/* Utilize Material Theme in custom components */
+@mixin fieldset-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $foreground: map-get($theme, foreground);
+
+  .fieldset {
+    color: mat-color($foreground, text);
+    border-color: mat-color($foreground, divider);
+    &__legend {
+      color: mat-color($foreground, secondary-text);
+    }
+    &__helper {
+      color: mat-color($foreground, secondary-text);
+    }
+    &:hover {
+      border-color: mat-color($foreground, text);
+      .fieldset__legend {
+        color: mat-color($foreground, text);
+      }
+    }
+    &:focus-within {
+      border-color: mat-color($primary, default);
+      .fieldset__legend {
+        border-color: mat-color($primary, default);
+      }
+    }
+  }
+}
+
+@include fieldset-theme($theme);

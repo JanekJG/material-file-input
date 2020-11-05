@@ -1,0 +1,52 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" display="none" aria-hidden="true" width="0" height="0" hidden>
+  <defs>
+    <symbol id="sprite-close" viewBox="0 0 24 24">
+      <path d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z"/>
+    </symbol>
+  </defs>
+</svg>
+
+<mat-card>
+  <mat-card-title>Fieldset and file input</mat-card-title>
+  <mat-card-subtitle>Material designed fieldset and file input</mat-card-subtitle>
+
+  <mat-card-content>
+    <form id="person" (change)="handleChange($event)">
+      <div class="form__container">
+        <mat-form-field class="form__input" appearance="outline" color="primary" floatLabel="always">
+          <mat-label>Name</mat-label>
+          <input matInput placeholder="Clark Kent">
+          <mat-hint>Please no numbers!</mat-hint>
+        </mat-form-field>
+      </div>
+
+      <app-fieldset
+        legend="Gender"
+        helperText="If your gender is not listed please select 'other'">
+        
+        <mat-radio-group name="gender">
+          <mat-radio-button class="fieldset-radio" value="male" color="primary">Male</mat-radio-button>
+          <mat-radio-button class="fieldset-radio" value="female" color="primary">Female</mat-radio-button>
+          <mat-radio-button class="fieldset-radio" value="other" color="primary">Other</mat-radio-button>
+        </mat-radio-group>
+      </app-fieldset>
+
+      <app-fieldset 
+        legend="application"
+        helperText="The FileAPI does not allow the user to remove files individually">
+        
+        <app-file-input
+          allowMultiple="true"
+          removeButtonLabel="Remove Applications"></app-file-input>
+      </app-fieldset>
+
+      <app-fieldset
+        legend="Branch">
+
+      </app-fieldset>
+    </form>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button type="submit" form="person">Submit</button>
+  </mat-card-actions>
+</mat-card>

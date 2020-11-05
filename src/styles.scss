@@ -1,0 +1,30 @@
+/* Add application styles & imports to this file! */
+[hidden], [aria-hidden="true"] {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+body {
+  background-color: #eeeeee;
+}
+
+svg {
+  fill: currentColor;
+  use, path {
+    fill: currentColor;
+  }
+}
+
+.form {
+  &__container {
+    width: 100%;
+  }
+  &__input {
+    width: 100%;
+  }
+}
+
+.fieldset-radio {
+  min-width: 100px;
+  margin: 4px 16px 8px 0;
+}

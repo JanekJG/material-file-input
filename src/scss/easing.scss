@@ -1,0 +1,21 @@
+$easing-standard: cubic-bezier(0.4, 0.0, 0.2, 1);
+$easing-decelerate: cubic-bezier(0.0, 0.0, 0.2, 1);
+$easing-accelerate: cubic-bezier(0.4, 0.0, 1, 1);
+
+$duration-simple-short: 100ms;
+$duration-simple-fade-in: 150ms;
+$duration-simple-fade-out: 75ms;
+
+$duration-complex-shape: 200ms;
+$duration-complex-icons: 500ms;
+
+$duration-open: 250ms;
+$duration-close: 200ms;
+$duration-expand: 300ms;
+$duration-collapse: 250ms;
+
+$duration-distance-sm: 100ms;
+$duration-distance-md-expand: 250ms;
+$duration-distance-md-collapse: 200ms;
+$duration-distance-lg-expand: 300ms;
+$duration-distance-lg-collapse: 250ms;
